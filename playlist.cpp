@@ -78,7 +78,6 @@ Playlist& Playlist::addSong(Song& B) {
         // returns unchanged playlist
         return *this;
     }
-
     // runs through the playlist to make sure the song isn't already in it
     for (int k{0}; k < songs_in; k++) {
         if (B == this->songs[k]) {
@@ -88,12 +87,10 @@ Playlist& Playlist::addSong(Song& B) {
             return *this;
         }
     }
-
     // adds the song to the playlist and increments number of songs in playlist
     this->songs[songs_in] = B;
     ++songs_in;
     std::cout << "success" << std::endl;
-
     // returns the modified playlist
     return *this;
 }
@@ -111,17 +108,14 @@ Playlist& Playlist::deletesong(int n) {
         for (int k = n; k < songs_in - 1; ++k) {
             this->songs[k] = this->songs[k + 1];
         }
-
         // set the last element to nullSong and decrement the count
         this->songs[songs_in - 1] = nullSong;
         --songs_in;
-
         std::cout << "success" << std::endl;
     }
     // returns the modified playlist
     return *this;
 }
-
 // function that plays the song at position n if possible
 void Playlist::playsong(int n) {
     // if n is smaller than the number of songs currently in the playlist
@@ -133,7 +127,7 @@ void Playlist::playsong(int n) {
         std::cout << "can not play " << n << std::endl;
     }
 }
-
+// deconstructor
 Playlist::~Playlist() {
     delete[] this->songs;
     this->songs = nullptr;

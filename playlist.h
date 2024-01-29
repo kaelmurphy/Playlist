@@ -38,7 +38,7 @@ class Playlist {
     Playlist& deletesong(int n);
     // plays song in position n of playlist if conditions are met
     void playsong(int n);
-
+    // deconstructor once playlist goes out of scope
     ~Playlist();
 
     private:
