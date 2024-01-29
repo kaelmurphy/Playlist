@@ -5,7 +5,6 @@ Song::Song():
 song(""),
 artist("") {
 }
-
 // creates a song object and sets its private member variables
 Song::Song(std::string song_name, std::string sartist): 
     song(""), artist("") {
